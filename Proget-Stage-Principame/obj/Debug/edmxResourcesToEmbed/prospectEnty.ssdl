@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Proget_stageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="LActionProspection">
+    <Key>
+      <PropertyRef Name="codeac" />
+    </Key>
+    <Property Name="codeac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dateProspection" Type="date" />
+    <Property Name="code" Type="int" />
+    <Property Name="sontelephone" Type="varchar" MaxLength="30" />
+    <Property Name="objectDeProspection" Type="varchar" MaxLength="50" />
+    <Property Name="moiyenDeContactPreferé" Type="varchar" MaxLength="30" />
+    <Property Name="resultat" Type="varchar" MaxLength="30" />
+    <Property Name="dateEchance" Type="date" />
+    <Property Name="Persson_inflient" Type="varchar" MaxLength="30" />
+    <Property Name="observation" Type="varchar" MaxLength="50" />
+    <Property Name="Nom" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Logine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Uname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="passworde" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prospect">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date_creation" Type="date" />
+    <Property Name="Titre" Type="varchar" MaxLength="30" />
+    <Property Name="Branche" Type="varchar" MaxLength="50" />
+    <Property Name="Demarcheure" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Adresse" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Observation" Type="varchar" MaxLength="50" />
+    <Property Name="ville" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="30" />
+    <Property Name="Profession_Activité" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__LActionPro__code__6477ECF3">
+    <End Role="Prospect" Type="Self.Prospect" Multiplicity="0..1" />
+    <End Role="LActionProspection" Type="Self.LActionProspection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prospect">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="LActionProspection">
+        <PropertyRef Name="code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Proget_stageModelStoreContainer">
+    <EntitySet Name="LActionProspection" EntityType="Self.LActionProspection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Logine" EntityType="Self.Logine" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prospect" EntityType="Self.Prospect" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__LActionPro__code__6477ECF3" Association="Self.FK__LActionPro__code__6477ECF3">
+      <End Role="Prospect" EntitySet="Prospect" />
+      <End Role="LActionProspection" EntitySet="LActionProspection" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Proget_stageModelStoreContainer" CdmEntityContainer="Proget_stageEntities">
+    <EntitySetMapping Name="Prospects">
+      <EntityTypeMapping TypeName="Proget_stageModel.Prospect">
+        <MappingFragment StoreEntitySet="Prospect">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Branche" ColumnName="Branche" />
+          <ScalarProperty Name="Demarcheure" ColumnName="Demarcheure" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Observation" ColumnName="Observation" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Profession_Activité" ColumnName="Profession_Activité" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Proget_stageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="Prospect">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="date_creation" Type="DateTime" Precision="0" />
+    <Property Name="Titre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Branche" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Demarcheure" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Adresse" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Observation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Profession_Activité" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="LActionProspections" Relationship="Proget_stageModel.FK__LActionPro__code__6477ECF3" FromRole="Prospect" ToRole="LActionProspection" />
+  </EntityType>
+  <EntityContainer Name="prospectEnty" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Prospects" EntityType="Self.Prospect" />
+    <EntitySet Name="Logines" EntityType="Proget_stageModel.Logine" />
+    <FunctionImport Name="ListeAction" ReturnType="Collection(Proget_stageModel.ListeAction_Result)" />
+    <EntitySet Name="LActionProspections" EntityType="Proget_stageModel.LActionProspection" />
+    <AssociationSet Name="FK__LActionPro__code__6477ECF3" Association="Proget_stageModel.FK__LActionPro__code__6477ECF3">
+      <End Role="Prospect" EntitySet="Prospects" />
+      <End Role="LActionProspection" EntitySet="LActionProspections" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Logine">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uname" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="passworde" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="ListeAction_Result">
+    <Property Type="DateTime" Name="dateProspection" Nullable="true" />
+    <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="objectDeProspection" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dateEchance" Nullable="true" />
+    <Property Type="String" Name="moiyenDeContactPreferé" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Persson_inflient" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="sontelephone" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="resultat" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <EntityType Name="LActionProspection">
+    <Key>
+      <PropertyRef Name="codeac" />
+    </Key>
+    <Property Name="codeac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateProspection" Type="DateTime" Precision="0" />
+    <Property Name="code" Type="Int32" />
+    <Property Name="sontelephone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="objectDeProspection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="moiyenDeContactPreferé" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="resultat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dateEchance" Type="DateTime" Precision="0" />
+    <Property Name="Persson_inflient" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="observation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Nom" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Prospect" Relationship="Proget_stageModel.FK__LActionPro__code__6477ECF3" FromRole="LActionProspection" ToRole="Prospect" />
+  </EntityType>
+  <Association Name="FK__LActionPro__code__6477ECF3">
+    <End Type="Proget_stageModel.Prospect" Role="Prospect" Multiplicity="0..1" />
+    <End Type="Proget_stageModel.LActionProspection" Role="LActionProspection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prospect">
+        <PropertyRef Name="code" />
+      </Principal>
+      <Dependent Role="LActionProspection">
+        <PropertyRef Name="code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Proget_stageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="LActionProspection">
+          <Key>
+            <PropertyRef Name="codeac" />
+          </Key>
+          <Property Name="codeac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateProspection" Type="date" />
+          <Property Name="code" Type="int" />
+          <Property Name="sontelephone" Type="varchar" MaxLength="30" />
+          <Property Name="objectDeProspection" Type="varchar" MaxLength="50" />
+          <Property Name="moiyenDeContactPreferé" Type="varchar" MaxLength="30" />
+          <Property Name="resultat" Type="varchar" MaxLength="30" />
+          <Property Name="dateEchance" Type="date" />
+          <Property Name="Persson_inflient" Type="varchar" MaxLength="30" />
+          <Property Name="observation" Type="varchar" MaxLength="50" />
+          <Property Name="Nom" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="Logine">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uname" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="passworde" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Prospect">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_creation" Type="date" />
+          <Property Name="Titre" Type="varchar" MaxLength="30" />
+          <Property Name="Branche" Type="varchar" MaxLength="50" />
+          <Property Name="Demarcheure" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Adresse" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Observation" Type="varchar" MaxLength="50" />
+          <Property Name="ville" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="30" />
+          <Property Name="Profession_Activité" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__LActionPro__code__6477ECF3">
+          <End Role="Prospect" Type="Self.Prospect" Multiplicity="0..1" />
+          <End Role="LActionProspection" Type="Self.LActionProspection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prospect">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="LActionProspection">
+              <PropertyRef Name="code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Proget_stageModelStoreContainer">
+          <EntitySet Name="LActionProspection" EntityType="Self.LActionProspection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logine" EntityType="Self.Logine" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prospect" EntityType="Self.Prospect" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__LActionPro__code__6477ECF3" Association="Self.FK__LActionPro__code__6477ECF3">
+            <End Role="Prospect" EntitySet="Prospect" />
+            <End Role="LActionProspection" EntitySet="LActionProspection" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Proget_stageModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Prospect">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_creation" Type="DateTime" Precision="0" />
+          <Property Name="Titre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Branche" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Demarcheure" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Adresse" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Observation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ville" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Profession_Activité" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="LActionProspections" Relationship="Proget_stageModel.FK__LActionPro__code__6477ECF3" FromRole="Prospect" ToRole="LActionProspection" />
+        </EntityType>
+        <EntityContainer Name="prospectEnty" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Prospects" EntityType="Self.Prospect" />
+          <EntitySet Name="Logines" EntityType="Proget_stageModel.Logine" />
+          <FunctionImport Name="ListeAction" ReturnType="Collection(Proget_stageModel.ListeAction_Result)" />
+          <EntitySet Name="LActionProspections" EntityType="Proget_stageModel.LActionProspection" />
+          <AssociationSet Name="FK__LActionPro__code__6477ECF3" Association="Proget_stageModel.FK__LActionPro__code__6477ECF3">
+            <End Role="Prospect" EntitySet="Prospects" />
+            <End Role="LActionProspection" EntitySet="LActionProspections" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Logine">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uname" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="passworde" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="ListeAction_Result">
+          <Property Type="DateTime" Name="dateProspection" Nullable="true" />
+          <Property Type="String" Name="Nom" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="objectDeProspection" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="dateEchance" Nullable="true" />
+          <Property Type="String" Name="moiyenDeContactPreferé" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Persson_inflient" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="sontelephone" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="resultat" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <EntityType Name="LActionProspection">
+          <Key>
+            <PropertyRef Name="codeac" />
+          </Key>
+          <Property Name="codeac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateProspection" Type="DateTime" Precision="0" />
+          <Property Name="code" Type="Int32" />
+          <Property Name="sontelephone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="objectDeProspection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="moiyenDeContactPreferé" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="resultat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="dateEchance" Type="DateTime" Precision="0" />
+          <Property Name="Persson_inflient" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="observation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nom" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Prospect" Relationship="Proget_stageModel.FK__LActionPro__code__6477ECF3" FromRole="LActionProspection" ToRole="Prospect" />
+        </EntityType>
+        <Association Name="FK__LActionPro__code__6477ECF3">
+          <End Type="Proget_stageModel.Prospect" Role="Prospect" Multiplicity="0..1" />
+          <End Type="Proget_stageModel.LActionProspection" Role="LActionProspection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prospect">
+              <PropertyRef Name="code" />
+            </Principal>
+            <Dependent Role="LActionProspection">
+              <PropertyRef Name="code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Proget_stageModelStoreContainer" CdmEntityContainer="prospectEnty">
+          <EntitySetMapping Name="Prospects">
+            <EntityTypeMapping TypeName="Proget_stageModel.Prospect">
+              <MappingFragment StoreEntitySet="Prospect">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
+                <ScalarProperty Name="Branche" ColumnName="Branche" />
+                <ScalarProperty Name="Demarcheure" ColumnName="Demarcheure" />
+                <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+                <ScalarProperty Name="Observation" ColumnName="Observation" />
+                <ScalarProperty Name="ville" ColumnName="ville" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Profession_Activité" ColumnName="Profession_Activité" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logines">
+            <EntityTypeMapping TypeName="Proget_stageModel.Logine">
+              <MappingFragment StoreEntitySet="Logine">
+                <ScalarProperty Name="passworde" ColumnName="passworde" />
+                <ScalarProperty Name="Uname" ColumnName="Uname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LActionProspections">
+            <EntityTypeMapping TypeName="Proget_stageModel.LActionProspection">
+              <MappingFragment StoreEntitySet="LActionProspection">
+                <ScalarProperty Name="Nom" ColumnName="Nom" />
+                <ScalarProperty Name="observation" ColumnName="observation" />
+                <ScalarProperty Name="Persson_inflient" ColumnName="Persson_inflient" />
+                <ScalarProperty Name="dateEchance" ColumnName="dateEchance" />
+                <ScalarProperty Name="resultat" ColumnName="resultat" />
+                <ScalarProperty Name="moiyenDeContactPreferé" ColumnName="moiyenDeContactPreferé" />
+                <ScalarProperty Name="objectDeProspection" ColumnName="objectDeProspection" />
+                <ScalarProperty Name="sontelephone" ColumnName="sontelephone" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="dateProspection" ColumnName="dateProspection" />
+                <ScalarProperty Name="codeac" ColumnName="codeac" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

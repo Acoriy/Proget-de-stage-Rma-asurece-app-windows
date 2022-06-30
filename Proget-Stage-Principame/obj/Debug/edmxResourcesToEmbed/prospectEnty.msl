@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Proget_stageModelStoreContainer" CdmEntityContainer="prospectEnty">
+    <EntitySetMapping Name="Prospects">
+      <EntityTypeMapping TypeName="Proget_stageModel.Prospect">
+        <MappingFragment StoreEntitySet="Prospect">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Branche" ColumnName="Branche" />
+          <ScalarProperty Name="Demarcheure" ColumnName="Demarcheure" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Observation" ColumnName="Observation" />
+          <ScalarProperty Name="ville" ColumnName="ville" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Profession_Activité" ColumnName="Profession_Activité" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logines">
+      <EntityTypeMapping TypeName="Proget_stageModel.Logine">
+        <MappingFragment StoreEntitySet="Logine">
+          <ScalarProperty Name="passworde" ColumnName="passworde" />
+          <ScalarProperty Name="Uname" ColumnName="Uname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LActionProspections">
+      <EntityTypeMapping TypeName="Proget_stageModel.LActionProspection">
+        <MappingFragment StoreEntitySet="LActionProspection">
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="observation" ColumnName="observation" />
+          <ScalarProperty Name="Persson_inflient" ColumnName="Persson_inflient" />
+          <ScalarProperty Name="dateEchance" ColumnName="dateEchance" />
+          <ScalarProperty Name="resultat" ColumnName="resultat" />
+          <ScalarProperty Name="moiyenDeContactPreferé" ColumnName="moiyenDeContactPreferé" />
+          <ScalarProperty Name="objectDeProspection" ColumnName="objectDeProspection" />
+          <ScalarProperty Name="sontelephone" ColumnName="sontelephone" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="dateProspection" ColumnName="dateProspection" />
+          <ScalarProperty Name="codeac" ColumnName="codeac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

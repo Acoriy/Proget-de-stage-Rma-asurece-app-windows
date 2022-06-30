@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Proget_stageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Prospect">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date_creation" Type="date" />
+    <Property Name="Titre" Type="varchar" MaxLength="30" />
+    <Property Name="Branche" Type="varchar" MaxLength="50" />
+    <Property Name="Demarcheure" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Adresse" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Observation" Type="varchar" MaxLength="50" />
+    <Property Name="ville" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="30" />
+    <Property Name="Profession_Activité" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Proget_stageModelStoreContainer">
+    <EntitySet Name="Prospect" EntityType="Self.Prospect" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

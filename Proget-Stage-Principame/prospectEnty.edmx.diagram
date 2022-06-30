@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="90b5590267e4490baac27b6f09a2484e" Name="Diagram1">
+        <EntityTypeShape EntityType="Proget_stageModel.Prospect" Width="2.375" PointX="1" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proget_stageModel.Logine" Width="1.5" PointX="4.25" PointY="1.5" />
+        <EntityTypeShape EntityType="Proget_stageModel.LActionProspection" Width="2.375" PointX="4.125" PointY="3.875" />
+        <AssociationConnector Association="Proget_stageModel.FK__LActionPro__code__6477ECF3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

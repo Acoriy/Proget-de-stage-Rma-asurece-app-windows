@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{002925F4-460C-4BC2-97C8-634511D0EF44}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Proget_Stage_Principame</RootNamespace>
+    <AssemblyName>Proget-Stage-Principame</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actions.Designer.cs">
+      <DependentUpon>Actions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AfficherGraph1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficherGraph1.Designer.cs">
+      <DependentUpon>AfficherGraph1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AfficherGraph2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfficherGraph2.Designer.cs">
+      <DependentUpon>AfficherGraph2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="choiGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="choiGraph.Designer.cs">
+      <DependentUpon>choiGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReportClient.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportClient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportGraph1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportGraph1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportGraph2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportGraph2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Espace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Espace.Designer.cs">
+      <DependentUpon>Espace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imprimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Imprimer.Designer.cs">
+      <DependentUpon>Imprimer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LActionProspection.cs">
+      <DependentUpon>prospectEnty.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Logine.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>prospectEnty.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogineRma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogineRma.Designer.cs">
+      <DependentUpon>LogineRma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menuextirieure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menuextirieure.Designer.cs">
+      <DependentUpon>Menuextirieure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nouvelle action.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nouvelle action.Designer.cs">
+      <DependentUpon>Nouvelle action.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proget_stageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proget_stageDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Prospect.cs">
+      <DependentUpon>prospectEnty.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prospectEnty.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prospectEnty.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prospectEnty.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prospectEnty.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prospectEnty.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prospectEnty.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Actions.resx">
+      <DependentUpon>Actions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficherGraph1.resx">
+      <DependentUpon>AfficherGraph1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AfficherGraph2.resx">
+      <DependentUpon>AfficherGraph2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="choiGraph.resx">
+      <DependentUpon>choiGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportClient.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportClient.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportGraph1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportGraph1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportGraph2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportGraph2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Espace.resx">
+      <DependentUpon>Espace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer.resx">
+      <DependentUpon>Imprimer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogineRma.resx">
+      <DependentUpon>LogineRma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menuextirieure.resx">
+      <DependentUpon>Menuextirieure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nouvelle action.resx">
+      <DependentUpon>Nouvelle action.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="DataSet1Report.xsc">
+      <DependentUpon>DataSet1Report.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1Report.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1Report.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1Report.xss">
+      <DependentUpon>DataSet1Report.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Proget_stageDataSet.xsc">
+      <DependentUpon>Proget_stageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Proget_stageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proget_stageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Proget_stageDataSet.xss">
+      <DependentUpon>Proget_stageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="prospectEnty.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>prospectEnty.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Prospect.datasource" />
+    <None Include="prospectEnty.edmx.diagram">
+      <DependentUpon>prospectEnty.edmx</DependentUpon>
+    </None>
+    <None Include="Resources\icons8-ajouter-administrateur-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-modifier-le-compte,Perssonne-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supprimer-l%27utilisateur-homme-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imprimer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="prospectEnty.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>prospectEnty.edmx</DependentUpon>
+      <LastGenOutput>prospectEnty.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="prospectEnty.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>prospectEnty.edmx</DependentUpon>
+      <LastGenOutput>prospectEnty.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\5_icon-icons.com_68890 %281%29a.png" />
+    <None Include="Resources\62925spiralcalendar_109208.png" />
+    <None Include="Resources\5_icon-icons.com_68890.png" />
+    <None Include="Resources\hierarchy_group_team_business_management_icon_153147.png" />
+    <None Include="Resources\hierarchy_group_team_business_management_icon_1531471.png" />
+    <None Include="Resources\hierarchy_group_team_business_management_icon_1531472.png" />
+    <None Include="Resources\hierarchy_group_team_business_management_icon_153147 %281%29.png" />
+    <None Include="Resources\iconfinder-mobile-seo-4341271_120582 %281%29.png" />
+    <None Include="Resources\documentation_folder_document_management_files_file_project_icon_142253 %281%29v.png" />
+    <None Include="Resources\course-1015601_640.jpg" />
+    <None Include="Resources\course-1015596_640.jpg" />
+    <None Include="Resources\icons8-fermer-48.png" />
+    <None Include="Resources\icons8-moins-48.png" />
+    <None Include="Resources\icons8-fermer-30.png" />
+    <None Include="Resources\icons8-liste-restreinte-100.png" />
+    <None Include="Resources\icons8-contrat-de-travail-100.png" />
+    <None Include="Resources\icons8-liste-de-vérification-64.png" />
+    <None Include="Resources\icons8-comptabilité-80.png" />
+    <None Include="Resources\icons8-travail-100 %281%29.png" />
+    <None Include="Resources\icons8-menu-arrondi-80.png" />
+    <None Include="Resources\icons8-menu-arrondi-100.png" />
+    <None Include="Resources\icons8-menu-arrondi-48.png" />
+    <None Include="Resources\icons8-pin-100.png" />
+    <Content Include="Resources\images %281%29.jpg" />
+    <Content Include="Resources\RMA-Watanya-.jpg" />
+    <Content Include="Resources\RMA-Watanya-1.jpg" />
+    <None Include="Resources\tools_21402 %281%29.png" />
+    <None Include="Resources\icons8-rechercher-plus-401.png" />
+    <None Include="Resources\icons8-rechercher-plus-40.png" />
+    <None Include="Resources\icons8-entretien-100.png" />
+    <None Include="Resources\icons8-stock-64.png" />
+    <None Include="Resources\logine1.png" />
+    <None Include="Resources\report_card_24px.png" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\capture-decran-2019-03-29-a-18-12-52.png" />
+    <None Include="Resources\rma_watanya-Tanger-2017-09-20-05-44-19.png" />
+    <None Include="Resources\RMA-Emploi-Recrutement-Dreamjob.ma-1.jpg" />
+    <None Include="Resources\512x512bb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
